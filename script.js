@@ -20,13 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('mouseup', () => cursor.style.transform = 'scale(1)');
 
         // Adding hover effect for interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .poem-card');
+        const interactiveElements = document.querySelectorAll('a, button, .poem-card, .chatbot-container');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.classList.add('cursor-hover');
+                if (el.classList.contains('chatbot-container')) {
+                    cursor.style.opacity = '0';
+                    document.body.style.cursor = 'auto';
+                }
             });
             el.addEventListener('mouseleave', () => {
                 cursor.classList.remove('cursor-hover');
+                if (el.classList.contains('chatbot-container')) {
+                    cursor.style.opacity = '1';
+                    document.body.style.cursor = 'none';
+                }
             });
         });
     }

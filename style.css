@@ -657,3 +657,26 @@ section.is-visible {
         gap: 2rem;
     }
 }
+
+/* Muse Section (Chatbot) */
+.muse-section {
+    padding: 10rem 0;
+    background: var(--primary-bg);
+}
+
+.chatbot-container {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    height: 800px;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+    .chatbot-container {
+        height: 600px;
+    }
+}
